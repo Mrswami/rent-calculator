@@ -1,6 +1,4 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js_interop';
-
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
@@ -8,14 +6,7 @@ import 'package:intl/intl.dart';
 import '../../services/plaid_service.dart';
 import '../../services/firebase_service.dart';
 import '../../models/plaid_account.dart';
-
-// ─── JS interop ──────────────────────────────────────────────────────────────
-@JS('openPlaidLink')
-external void _openPlaidLinkJs(
-  JSString linkToken,
-  JSFunction onSuccess,
-  JSFunction onExit,
-);
+import '../../utils/plaid_js_integration.dart' as plaid_js;
 
 // ─── colours ─────────────────────────────────────────────────────────────────
 const _plaidGreen = Color(0xFF00B050);
@@ -136,69 +127,64 @@ class _PlaidConnectScreenState extends State<PlaidConnectScreen>
     required String userId,
     required FirebaseService fb,
   }) {
-    // onSuccess: called by Plaid with (publicToken, metadataJsonString)
-    void onSuccess(JSAny? pubTokenJs, JSAny? metaJs) {
-      final publicToken = (pubTokenJs as JSString?)?.toDart ?? '';
-      // Schedule async work outside this synchronous JS callback
-      Future(() async {
+    if (!kIsWeb) {
+      _showSnack('Bank connection is only available on the web.');
+      return;
+    }
+
+    plaid_js.openPlaidLink(
+      linkToken: linkToken,
+      onSuccess: (publicToken, metadata) {
+        // Schedule async work outside this synchronous JS callback
+        Future(() async {
+          if (!mounted) return;
+          setState(() => _screen = _ScreenState.connecting);
+          try {
+            final result = await _plaid.exchangePublicToken(
+              publicToken: publicToken,
+              userId: userId,
+            );
+            if (!mounted) return;
+
+            final institutionName =
+                result['institution_name'] as String? ?? 'Your Bank';
+            final institutionId = result['institution_id'] as String? ?? '';
+            final rawAccounts = (result['accounts'] as List? ?? [])
+                .map((a) =>
+                    PlaidAccount.fromJson(Map<String, dynamic>.from(a as Map)))
+                .toList();
+
+            await fb.savePlaidConnection(
+              userId: userId,
+              institutionId: institutionId,
+              institutionName: institutionName,
+              accounts: rawAccounts,
+            );
+            if (!mounted) return;
+
+            setState(() {
+              _accounts = rawAccounts;
+              _institutionName = institutionName;
+              _lastSynced = DateTime.now();
+              _screen = _ScreenState.connected;
+            });
+            _showSnack('🎉 Bank connected successfully!');
+          } catch (e) {
+            if (!mounted) return;
+            setState(() {
+              _error = 'Connection failed: $e';
+              _screen = _ScreenState.readyToConnect;
+            });
+          }
+        });
+      },
+      onExit: (error, metadata) {
         if (!mounted) return;
-        setState(() => _screen = _ScreenState.connecting);
-        try {
-          final result = await _plaid.exchangePublicToken(
-            publicToken: publicToken,
-            userId:      userId,
-          );
-          if (!mounted) return;
-
-          final institutionName =
-              result['institution_name'] as String? ?? 'Your Bank';
-          final institutionId =
-              result['institution_id'] as String? ?? '';
-          final rawAccounts =
-              (result['accounts'] as List? ?? [])
-                  .map((a) => PlaidAccount.fromJson(
-                      Map<String, dynamic>.from(a as Map)))
-                  .toList();
-
-          await fb.savePlaidConnection(
-            userId:          userId,
-            institutionId:   institutionId,
-            institutionName: institutionName,
-            accounts:        rawAccounts,
-          );
-          if (!mounted) return;
-
-          setState(() {
-            _accounts        = rawAccounts;
-            _institutionName = institutionName;
-            _lastSynced      = DateTime.now();
-            _screen          = _ScreenState.connected;
-          });
-          _showSnack('🎉 Bank connected successfully!');
-        } catch (e) {
-          if (!mounted) return;
-          setState(() {
-            _error  = 'Connection failed: $e';
-            _screen = _ScreenState.readyToConnect;
-          });
+        setState(() => _screen = _ScreenState.readyToConnect);
+        if (error != null && error.isNotEmpty && error != 'null') {
+          setState(() => _error = 'Plaid Link closed: $error');
         }
-      });
-    }
-
-    // onExit: called when user closes Plaid Link (with optional error)
-    void onExit(JSAny? errJs, JSAny? metaJs) {
-      if (!mounted) return;
-      setState(() => _screen = _ScreenState.readyToConnect);
-      final errStr = (errJs as JSString?)?.toDart;
-      if (errStr != null && errStr.isNotEmpty && errStr != 'null') {
-        setState(() => _error = 'Plaid Link closed: $errStr');
-      }
-    }
-
-    _openPlaidLinkJs(
-      linkToken.toJS,
-      onSuccess.toJS,
-      onExit.toJS,
+      },
     );
   }
 

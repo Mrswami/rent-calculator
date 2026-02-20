@@ -30,14 +30,15 @@ void main() async {
 }
 
 class RentCalculatorApp extends StatelessWidget {
-  const RentCalculatorApp({super.key});
+  final FirebaseService? firebaseService;
+  const RentCalculatorApp({super.key, this.firebaseService});
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         Provider<FirebaseService>(
-          create: (_) => FirebaseService(),
+          create: (_) => firebaseService ?? FirebaseService(),
         ),
       ],
       child: MaterialApp.router(

@@ -1,20 +1,31 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:rent_calculator/main.dart';
+import 'package:rent_calculator/services/firebase_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+// Manual stub to avoid dependency on mockito or real Firebase
+class MockFirebaseService implements FirebaseService {
+  @override
+  User? get currentUser => null;
+
+  @override
+  Stream<User?> get authStateChanges => const Stream.empty();
+
+  @override
+  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
 
 void main() {
   testWidgets('App loads successfully', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const RentCalculatorApp());
+    // Build our app with the mocked service.
+    await tester.pumpWidget(
+      RentCalculatorApp(firebaseService: MockFirebaseService()),
+    );
 
-    // Verify that the app loads (check for login screen or app title)
+    // Give it a frame to render the initial location
+    await tester.pump();
+
+    // Verify that the title is present on the login screen
     expect(find.text('Rent Calculator'), findsWidgets);
   });
 }
