@@ -161,7 +161,7 @@ class _AddExpenseScreenScreenState extends State<AddExpenseScreen> {
                   prefixIcon: Icon(Icons.category),
                   border: OutlineInputBorder(),
                 ),
-                value: _category,
+                initialValue: _category,
                 items: _categories.map((category) {
                   return DropdownMenuItem(
                     value: category,

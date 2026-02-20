@@ -153,7 +153,7 @@ class _AddRentPaymentScreenState extends State<AddRentPaymentScreen> {
                   prefixIcon: Icon(Icons.category),
                   border: OutlineInputBorder(),
                 ),
-                value: _category,
+                initialValue: _category,
                 items: _categories.map((category) {
                   return DropdownMenuItem(
                     value: category,

@@ -39,8 +39,9 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
           orElse: () => null,
         );
     // Pre-fill email so browser password managers can read it
-    if (_user != null) {
-      _emailController.text = _user!.email;
+    final user = _user;
+    if (user != null) {
+      _emailController.text = user.email;
     }
     _loadRememberMeState();
   }
@@ -69,7 +70,8 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
       setState(() => _errorMessage = 'Please enter your password');
       return;
     }
-    if (_user == null) {
+    final user = _user;
+    if (user == null) {
       setState(() => _errorMessage = 'User not found');
       return;
     }
@@ -90,15 +92,16 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
         );
       }
 
+      if (!mounted) return;
       final firebaseService = context.read<FirebaseService>();
       await firebaseService.signInWithEmail(
-        _user!.email,
+        user.email,
         _passwordController.text,
       );
 
       // Save or clear "remember me" preference
       if (_rememberMe) {
-        await RememberMeService.setRemembered(_user!.name);
+        await RememberMeService.setRemembered(user.name);
       } else {
         await RememberMeService.clearRemembered();
       }
@@ -154,11 +157,12 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
   }
 
   Future<void> _sendPasswordReset() async {
-    if (_user == null) return;
+    final user = _user;
+    if (user == null) return;
     setState(() => _isLoading = true);
 
     try {
-      await FirebaseAuth.instance.sendPasswordResetEmail(email: _user!.email);
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: user.email);
       if (mounted) {
         setState(() {
           _isLoading = false;
@@ -176,13 +180,15 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
   }
 
   void _showResetSentDialog() {
+    final user = _user;
+    if (user == null) return;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         icon: Icon(Icons.mark_email_read, size: 48, color: Colors.green[600]),
         title: const Text('Reset Email Sent'),
         content: Text(
-          'A password reset link has been sent to:\n\n${_user!.email}\n\nCheck your inbox and follow the instructions.',
+          'A password reset link has been sent to:\n\n${user.email}\n\nCheck your inbox and follow the instructions.',
           textAlign: TextAlign.center,
         ),
         actions: [
@@ -200,7 +206,8 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (_user == null) {
+    final user = _user;
+    if (user == null) {
       return Scaffold(
         body: Center(
           child: Column(
@@ -218,7 +225,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
       );
     }
 
-    final color = Color(_user!.colorValue);
+    final color = Color(user.colorValue);
 
     return Scaffold(
       body: Center(
@@ -264,7 +271,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          _user!.initials,
+                          user.initials,
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 32,
@@ -278,7 +285,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
 
                   // Name
                   Text(
-                    _user!.name,
+                    user.name,
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -288,7 +295,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
 
                   // Email — selectable so it can be copied
                   SelectableText(
-                    _user!.email,
+                    user.email,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Colors.grey[600],
                         ),
@@ -416,7 +423,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                     OutlinedButton.icon(
                       onPressed: _isLoading ? null : _sendPasswordReset,
                       icon: const Icon(Icons.email_outlined),
-                      label: Text('Send reset link to ${_user!.email}'),
+                      label: Text('Send reset link to ${user.email}'),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: Colors.orange[700],
                         side: BorderSide(color: Colors.orange[300]!),
