@@ -14,78 +14,76 @@ import '../screens/utilities/utility_split_screen.dart';
 import '../services/firebase_service.dart';
 
 class AppRouter {
-  static final FirebaseService _firebaseService = FirebaseService();
+  static GoRouter createRouter(FirebaseService firebaseService) {
+    return GoRouter(
+      initialLocation: '/login',
+      redirect: (context, state) {
+        final isLoggedIn = firebaseService.currentUser != null;
+        final path = state.matchedLocation;
+        final isGoingToAuth = path == '/login' ||
+            path == '/signup' ||
+            path.startsWith('/login/');
 
-  static GoRouter get router => _router;
-
-  static final _router = GoRouter(
-    initialLocation: '/login',
-    redirect: (context, state) {
-      final isLoggedIn = _firebaseService.currentUser != null;
-      final path = state.matchedLocation;
-      final isGoingToAuth = path == '/login' ||
-          path == '/signup' ||
-          path.startsWith('/login/');
-
-      if (!isLoggedIn && !isGoingToAuth) {
-        return '/login';
-      }
-      if (isLoggedIn && isGoingToAuth) {
-        return '/dashboard';
-      }
-      return null;
-    },
-    routes: [
-      GoRoute(
-        path: '/login',
-        builder: (context, state) => const LoginScreen(),
-      ),
-      GoRoute(
-        path: '/login/:userName',
-        builder: (context, state) => UserLoginScreen(
-          userName: state.pathParameters['userName'] ?? '',
+        if (!isLoggedIn && !isGoingToAuth) {
+          return '/login';
+        }
+        if (isLoggedIn && isGoingToAuth) {
+          return '/dashboard';
+        }
+        return null;
+      },
+      routes: [
+        GoRoute(
+          path: '/login',
+          builder: (context, state) => const LoginScreen(),
         ),
-      ),
-      GoRoute(
-        path: '/signup',
-        builder: (context, state) => const SignUpScreen(),
-      ),
-      GoRoute(
-        path: '/dashboard',
-        builder: (context, state) => const DashboardScreen(),
-      ),
-      GoRoute(
-        path: '/rent',
-        builder: (context, state) => const RentTrackingScreen(),
-      ),
-      GoRoute(
-        path: '/rent/add',
-        builder: (context, state) => const AddRentPaymentScreen(),
-      ),
-      GoRoute(
-        path: '/budget',
-        builder: (context, state) => const BudgetScreen(),
-      ),
-      GoRoute(
-        path: '/budget/add',
-        builder: (context, state) => const AddBudgetScreen(),
-      ),
-      GoRoute(
-        path: '/expenses',
-        builder: (context, state) => const ExpensesScreen(),
-      ),
-      GoRoute(
-        path: '/expenses/add',
-        builder: (context, state) => const AddExpenseScreen(),
-      ),
-      GoRoute(
-        path: '/plaid',
-        builder: (context, state) => const PlaidConnectScreen(),
-      ),
-      GoRoute(
-        path: '/utilities',
-        builder: (context, state) => const UtilitySplitScreen(),
-      ),
-    ],
-  );
+        GoRoute(
+          path: '/login/:userName',
+          builder: (context, state) => UserLoginScreen(
+            userName: state.pathParameters['userName'] ?? '',
+          ),
+        ),
+        GoRoute(
+          path: '/signup',
+          builder: (context, state) => const SignUpScreen(),
+        ),
+        GoRoute(
+          path: '/dashboard',
+          builder: (context, state) => const DashboardScreen(),
+        ),
+        GoRoute(
+          path: '/rent',
+          builder: (context, state) => const RentTrackingScreen(),
+        ),
+        GoRoute(
+          path: '/rent/add',
+          builder: (context, state) => const AddRentPaymentScreen(),
+        ),
+        GoRoute(
+          path: '/budget',
+          builder: (context, state) => const BudgetScreen(),
+        ),
+        GoRoute(
+          path: '/budget/add',
+          builder: (context, state) => const AddBudgetScreen(),
+        ),
+        GoRoute(
+          path: '/expenses',
+          builder: (context, state) => const ExpensesScreen(),
+        ),
+        GoRoute(
+          path: '/expenses/add',
+          builder: (context, state) => const AddExpenseScreen(),
+        ),
+        GoRoute(
+          path: '/plaid',
+          builder: (context, state) => const PlaidConnectScreen(),
+        ),
+        GoRoute(
+          path: '/utilities',
+          builder: (context, state) => const UtilitySplitScreen(),
+        ),
+      ],
+    );
+  }
 }

@@ -1,0 +1,35 @@
+﻿00:00 +0: loading C:/Users/freem/CursorAntiG/RentCalculator/test/widget_test.dart
+flutter : 
+lib/main.dart:42:14: Error: 
+Type 'GoRouter' not found.
+At line:1 char:1
++ flutter test > 
+test_output.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (lib/m  
+  ain.dart:4...ter' not f   
+ ound.:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+  late final GoRouter 
+_router;
+             ^^^^^^^^
+lib/main.dart:42:14: Error: 
+'GoRouter' isn't a type.
+  late final GoRouter 
+_router;
+             ^^^^^^^^
+00:00 +0 -1: loading C:/Users/freem/CursorAntiG/RentCalculator/test/widget_test.dart [E]
+  Failed to load "C:/Users/freem/CursorAntiG/RentCalculator/test/widget_test.dart":
+  Compilation failed for testPath=C:/Users/freem/CursorAntiG/RentCalculator/test/widget_test.dart: lib/main.dart:42:14: Error: Type 'GoRouter' not found.
+    late final GoRouter _router;
+               ^^^^^^^^
+  lib/main.dart:42:14: Error: 'GoRouter' isn't a type.
+    late final GoRouter _router;
+               ^^^^^^^^
+  .
+00:00 +0 -1: Some tests failed.

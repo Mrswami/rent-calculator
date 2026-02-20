@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart';
 import 'utils/app_router.dart';
 import 'services/firebase_service.dart';
 import 'services/user_setup_service.dart';
@@ -29,17 +30,31 @@ void main() async {
   runApp(const RentCalculatorApp());
 }
 
-class RentCalculatorApp extends StatelessWidget {
+class RentCalculatorApp extends StatefulWidget {
   final FirebaseService? firebaseService;
   const RentCalculatorApp({super.key, this.firebaseService});
+
+  @override
+  State<RentCalculatorApp> createState() => _RentCalculatorAppState();
+}
+
+class _RentCalculatorAppState extends State<RentCalculatorApp> {
+  late final FirebaseService _firebaseService;
+  late final GoRouter _router;
+
+  @override
+  void initState() {
+    super.initState();
+    // Use provided service (e.g. for testing) or create default
+    _firebaseService = widget.firebaseService ?? FirebaseService();
+    _router = AppRouter.createRouter(_firebaseService);
+  }
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<FirebaseService>(
-          create: (_) => firebaseService ?? FirebaseService(),
-        ),
+        Provider<FirebaseService>.value(value: _firebaseService),
       ],
       child: MaterialApp.router(
         title: 'Rent Calculator',
@@ -64,7 +79,7 @@ class RentCalculatorApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        routerConfig: AppRouter.router,
+        routerConfig: _router,
       ),
     );
   }
