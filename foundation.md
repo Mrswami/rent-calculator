@@ -32,5 +32,14 @@ The project is automated through GitHub Actions (`.github/workflows/pipeline.yml
 
 ## 📱 Mobile-First Design
 - **Responsiveness**: Use `LayoutBuilder` or `MediaQuery` to ensure all screens adapt gracefully between mobile (narrow) and web (wide) views.
-- **Haptics**: Always include tactile feedback (`HapticFeedback`) for primary interactive elements (buttons, selection changes).
-- **Transitions**: Native-style transitions (Slide/Fade) are non-negotiable for a premium mobile experience.
+## 💡 Quick Reminders for the Agent (Foundation 1/2)
+If you are an AI assistant starting this task, read these 5 rules to stay "Analysis First" and preserve the premium feel:
+
+1.  **Stop & Check**: Before your first push, run `flutter analyze`. If there are any lints, fix them. **No exceptions.**
+2.  **Powershell Safety**: This is a Windows environment. Never use `&&` in your `run_command` calls. Use `;` or separate the calls.
+3.  **Mobile DNA**: Every button needs `HapticFeedback.lightImpact()`. It’s the difference between a simple app and a premium experience.
+4.  **Entrance Polish**: Wrap new UI sections in the `AnimateIn` widget. We don't do "jumpy" UI here; we do fluid motion.
+5.  **Distribution Guardian**: We distribute via Firebase App Distribution. If a push fails, use `gh run view --log-failed` to find the issue immediately.
+
+---
+*Last Updated: 2026-02-21*
