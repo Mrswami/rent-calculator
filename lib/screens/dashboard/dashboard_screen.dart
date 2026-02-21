@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,8 @@ import '../../services/rent_calculator_service.dart';
 import '../../widgets/month_calendar_widget.dart';
 import '../../widgets/avatar_selector_widget.dart';
 import '../../widgets/app_drawer.dart';
+import '../../widgets/animate_in.dart';
+import '../../utils/app_theme.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -48,8 +51,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
     final displayName = _nameFrom(firebaseService.currentUser?.email ?? '');
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('Rent Calculator'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                AppTheme.primaryBlue.withOpacity(0.8),
+                AppTheme.primaryTeal.withOpacity(0.8),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+        title: const Text('Rent Calculator Pro'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -109,149 +125,175 @@ class _DashboardScreenState extends State<DashboardScreen> {
               final isMobile = constraints.maxWidth < 600;
 
               return SingleChildScrollView(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.fromLTRB(16, 120, 16, 32),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // ── Quick Actions (NOW AT TOP) ──────────────────────────
-                    Text('Quick Actions',
-                        style: Theme.of(context).textTheme.titleLarge
-                            ?.copyWith(fontWeight: FontWeight.bold)),
+                    // ── Quick Actions ────────────────────────────────────
+                    const AnimateIn(
+                      delay: Duration(milliseconds: 100),
+                      child: Text('Quick Actions',
+                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                    ),
                     const SizedBox(height: 16),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Wrap(
-                        spacing: 12, 
-                        runSpacing: 12,
-                        alignment: isMobile ? WrapAlignment.center : WrapAlignment.start,
-                        children: [
-                          _ActionButton(icon: Icons.add,
-                              label: 'Add Rent', onTap: () => context.go('/rent/add')),
-                          _ActionButton(icon: Icons.receipt_long,
-                              label: 'View Rent', onTap: () => context.go('/rent')),
-                          _ActionButton(icon: Icons.account_balance,
-                              label: 'Budget', onTap: () => context.go('/budget')),
-                          _ActionButton(icon: Icons.attach_money,
-                              label: 'Expenses', onTap: () => context.go('/expenses')),
-                          _ActionButton(icon: Icons.account_balance_wallet,
-                              label: 'Connect Bank', onTap: () => context.go('/plaid')),
-                          _ActionButton(icon: Icons.water_drop_outlined,
-                              label: 'Cost Split', onTap: () => context.go('/utilities')),
-                        ],
+                    AnimateIn(
+                      delay: const Duration(milliseconds: 200),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Wrap(
+                          spacing: 12, 
+                          runSpacing: 12,
+                          alignment: isMobile ? WrapAlignment.center : WrapAlignment.start,
+                          children: [
+                            _ActionButton(icon: Icons.add,
+                                label: 'Add Rent', color: AppTheme.primaryBlue,
+                                onTap: () => context.go('/rent/add')),
+                            _ActionButton(icon: Icons.receipt_long,
+                                label: 'View Rent', color: AppTheme.primaryTeal,
+                                onTap: () => context.go('/rent')),
+                            _ActionButton(icon: Icons.account_balance,
+                                label: 'Budget', color: AppTheme.accentOrange,
+                                onTap: () => context.go('/budget')),
+                            _ActionButton(icon: Icons.attach_money,
+                                label: 'Expenses', color: AppTheme.accentGreen,
+                                onTap: () => context.go('/expenses')),
+                            _ActionButton(icon: Icons.account_balance_wallet,
+                                label: 'Connect Bank', color: Colors.blueAccent,
+                                onTap: () => context.go('/plaid')),
+                            _ActionButton(icon: Icons.water_drop_outlined,
+                                label: 'Cost Split', color: Colors.indigo,
+                                onTap: () => context.go('/utilities')),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(height: 32),
 
                     // ── Summary Section ─────────────────────────────────────
-                    Text('Overview',
-                        style: Theme.of(context).textTheme.titleLarge
-                            ?.copyWith(fontWeight: FontWeight.bold)),
+                    const AnimateIn(
+                      delay: Duration(milliseconds: 300),
+                      child: Text('Overview',
+                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                    ),
                     const SizedBox(height: 16),
-                    if (isMobile) 
-                      Column(
+                    AnimateIn(
+                      delay: const Duration(milliseconds: 400),
+                      child: Column(
                         children: [
-                          _SummaryCard(
-                            title: 'Total Due (30 days)',
-                            value: '\$${totalDue.toStringAsFixed(2)}',
-                            icon: Icons.account_balance_wallet, color: Colors.blue),
-                          const SizedBox(height: 12),
-                          _SummaryCard(
-                            title: 'Upcoming Payments',
-                            value: upcoming.length.toString(),
-                            icon: Icons.calendar_today, color: Colors.orange),
-                          const SizedBox(height: 12),
-                          _SummaryCard(
-                            title: 'Paid This Month',
-                            value: '\$${payments.where((p) => p.isPaid && p.paidDate != null && p.paidDate!.month == now.month).fold<double>(0, (s, p) => s + p.amount).toStringAsFixed(2)}',
-                            icon: Icons.check_circle, color: Colors.green),
-                          const SizedBox(height: 12),
-                          _SummaryCard(
-                            title: 'Monthly Average',
-                            value: '\$${RentCalculatorService.calculateMonthlyAverage(payments).toStringAsFixed(2)}',
-                            icon: Icons.trending_up, color: Colors.purple),
-                        ],
-                      )
-                    else 
-                      Column(
-                        children: [
-                          Row(children: [
-                            Expanded(child: _SummaryCard(
-                              title: 'Total Due (30 days)',
-                              value: '\$${totalDue.toStringAsFixed(2)}',
-                              icon: Icons.account_balance_wallet, color: Colors.blue)),
-                            const SizedBox(width: 16),
-                            Expanded(child: _SummaryCard(
-                              title: 'Upcoming Payments',
-                              value: upcoming.length.toString(),
-                              icon: Icons.calendar_today, color: Colors.orange)),
-                          ]),
-                          const SizedBox(height: 16),
-                          Row(children: [
-                            Expanded(child: _SummaryCard(
-                              title: 'Paid This Month',
-                              value: '\$${payments.where((p) => p.isPaid && p.paidDate != null && p.paidDate!.month == now.month).fold<double>(0, (s, p) => s + p.amount).toStringAsFixed(2)}',
-                              icon: Icons.check_circle, color: Colors.green)),
-                            const SizedBox(width: 16),
-                            Expanded(child: _SummaryCard(
-                              title: 'Monthly Average',
-                              value: '\$${RentCalculatorService.calculateMonthlyAverage(payments).toStringAsFixed(2)}',
-                              icon: Icons.trending_up, color: Colors.purple)),
-                          ]),
+                          if (isMobile) 
+                            ...[
+                              _SummaryCard(
+                                title: 'Total Due (30 days)',
+                                value: '\$${totalDue.toStringAsFixed(2)}',
+                                icon: Icons.account_balance_wallet, color: AppTheme.primaryBlue),
+                              const SizedBox(height: 12),
+                              _SummaryCard(
+                                title: 'Upcoming Payments',
+                                value: upcoming.length.toString(),
+                                icon: Icons.calendar_today, color: AppTheme.accentOrange),
+                              const SizedBox(height: 12),
+                              _SummaryCard(
+                                title: 'Paid This Month',
+                                value: '\$${payments.where((p) => p.isPaid && p.paidDate != null && p.paidDate!.month == now.month).fold<double>(0, (s, p) => s + p.amount).toStringAsFixed(2)}',
+                                icon: Icons.check_circle, color: AppTheme.accentGreen),
+                              const SizedBox(height: 12),
+                              _SummaryCard(
+                                title: 'Monthly Average',
+                                value: '\$${RentCalculatorService.calculateMonthlyAverage(payments).toStringAsFixed(2)}',
+                                icon: Icons.trending_up, color: Colors.purpleAccent),
+                            ]
+                          else 
+                            ...[
+                              Row(children: [
+                                Expanded(child: _SummaryCard(
+                                  title: 'Total Due (30 days)',
+                                  value: '\$${totalDue.toStringAsFixed(2)}',
+                                  icon: Icons.account_balance_wallet, color: AppTheme.primaryBlue)),
+                                const SizedBox(width: 16),
+                                Expanded(child: _SummaryCard(
+                                  title: 'Upcoming Payments',
+                                  value: upcoming.length.toString(),
+                                  icon: Icons.calendar_today, color: AppTheme.accentOrange)),
+                              ]),
+                              const SizedBox(height: 16),
+                              Row(children: [
+                                Expanded(child: _SummaryCard(
+                                  title: 'Paid This Month',
+                                  value: '\$${payments.where((p) => p.isPaid && p.paidDate != null && p.paidDate!.month == now.month).fold<double>(0, (s, p) => s + p.amount).toStringAsFixed(2)}',
+                                  icon: Icons.check_circle, color: AppTheme.accentGreen)),
+                                const SizedBox(width: 16),
+                                Expanded(child: _SummaryCard(
+                                  title: 'Monthly Average',
+                                  value: '\$${RentCalculatorService.calculateMonthlyAverage(payments).toStringAsFixed(2)}',
+                                  icon: Icons.trending_up, color: Colors.purpleAccent)),
+                              ]),
+                            ],
                         ],
                       ),
+                    ),
                     const SizedBox(height: 32),
 
                     // ── Calendar Section ────────────────────────────────────
-                    Text('Payments Calendar',
-                        style: Theme.of(context).textTheme.titleLarge
-                            ?.copyWith(fontWeight: FontWeight.bold)),
+                    const AnimateIn(
+                      delay: Duration(milliseconds: 500),
+                      child: Text('Payments Calendar',
+                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                    ),
                     const SizedBox(height: 16),
-                    Card(
-                      margin: EdgeInsets.zero,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: MonthCalendarWidget(
-                          onDateTap: (date) {
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text(DateFormat('EEEE, MMMM d, yyyy').format(date)),
-                              duration: const Duration(seconds: 2),
-                            ));
-                          },
+                    AnimateIn(
+                      delay: const Duration(milliseconds: 600),
+                      child: Card(
+                        margin: EdgeInsets.zero,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: MonthCalendarWidget(
+                            onDateTap: (date) {
+                              HapticFeedback.selectionClick();
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text(DateFormat('EEEE, MMMM d, yyyy').format(date)),
+                                duration: const Duration(seconds: 2),
+                              ));
+                            },
+                          ),
                         ),
                       ),
                     ),
                     const SizedBox(height: 32),
 
                     // ── Upcoming Payments ────────────────────────────────────
-                    Text('Upcoming Payments',
-                        style: Theme.of(context).textTheme.titleLarge
-                            ?.copyWith(fontWeight: FontWeight.bold)),
+                    const AnimateIn(
+                      delay: Duration(milliseconds: 700),
+                      child: Text('Upcoming Payments',
+                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                    ),
                     const SizedBox(height: 16),
-                    if (upcoming.isEmpty)
-                      Card(child: Padding(
-                        padding: const EdgeInsets.all(24),
-                        child: Center(child: Text('No upcoming payments',
-                            style: TextStyle(color: Colors.grey[600]))),
-                      ))
-                    else
-                      ...upcoming.take(5).map((p) => Card(
-                        margin: const EdgeInsets.only(bottom: 8),
-                        child: ListTile(
-                          leading: CircleAvatar(
-                            backgroundColor: p.isPaid ? Colors.green : Colors.orange,
-                            child: Icon(p.isPaid ? Icons.check : Icons.pending,
-                                color: Colors.white),
-                          ),
-                          title: Text('\$${p.amount.toStringAsFixed(2)}',
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18)),
-                          subtitle: Text(
-                              'Due: ${DateFormat('MMM dd, yyyy').format(p.dueDate)}'),
-                          trailing: p.isPaid
-                              ? const Icon(Icons.check_circle, color: Colors.green)
-                              : null,
-                        ),
-                      )),
+                    AnimateIn(
+                      delay: const Duration(milliseconds: 800),
+                      child: upcoming.isEmpty
+                          ? const Card(child: Padding(
+                              padding: EdgeInsets.all(24),
+                              child: Center(child: Text('No upcoming payments')),
+                            ))
+                          : Column(
+                              children: upcoming.take(5).map((p) => Card(
+                                margin: const EdgeInsets.only(bottom: 8),
+                                child: ListTile(
+                                  leading: CircleAvatar(
+                                    backgroundColor: p.isPaid ? Colors.green : Colors.orange,
+                                    child: Icon(p.isPaid ? Icons.check : Icons.pending,
+                                        color: Colors.white),
+                                  ),
+                                  title: Text('\$${p.amount.toStringAsFixed(2)}',
+                                      style: const TextStyle(fontWeight: FontWeight.bold)),
+                                  subtitle: Text(
+                                      'Due: ${DateFormat('MMM dd').format(p.dueDate)}'),
+                                  trailing: p.isPaid
+                                      ? const Icon(Icons.check_circle, color: Colors.green)
+                                      : null,
+                                ),
+                              )).toList(),
+                            ),
+                    ),
                   ],
                 ),
               );
@@ -259,6 +301,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           );
         },
       ),
+    );
   }
 }
 
@@ -275,33 +318,52 @@ class _SummaryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      decoration: BoxDecoration(
+        color: AppTheme.surfaceCard,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: color.withOpacity(0.1),
+            blurRadius: 15,
+            offset: const Offset(0, 8),
+          ),
+        ],
+        border: Border.all(color: color.withOpacity(0.1)),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(icon, color: color),
+                Icon(icon, color: color, size: 28),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(4),
+                    color: color.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(10),
                   ),
+                  child: const Icon(Icons.trending_up, size: 12, color: Colors.white24),
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
             Text(value,
-                style: Theme.of(context).textTheme.headlineSmall
-                    ?.copyWith(fontWeight: FontWeight.bold, color: color)),
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: -1,
+                )),
             const SizedBox(height: 4),
             Text(title,
-                style: Theme.of(context).textTheme.bodySmall
-                    ?.copyWith(color: Colors.grey[600])),
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.5),
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                )),
           ],
         ),
       ),
@@ -312,28 +374,48 @@ class _SummaryCard extends StatelessWidget {
 class _ActionButton extends StatelessWidget {
   final IconData icon;
   final String label;
+  final Color color;
   final VoidCallback onTap;
 
-  const _ActionButton({required this.icon, required this.label, required this.onTap});
+  const _ActionButton({
+    required this.icon, 
+    required this.label, 
+    required this.color,
+    required this.onTap
+  });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey[300]!),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon),
-            const SizedBox(width: 8),
-            Text(label),
-          ],
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () {
+          HapticFeedback.lightImpact();
+          onTap();
+        },
+        borderRadius: BorderRadius.circular(18),
+        child: Container(
+          width: 100,
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.08),
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(color: color.withOpacity(0.2)),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(icon, color: color, size: 28),
+              const SizedBox(height: 8),
+              Text(label,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: color,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                  )),
+            ],
+          ),
         ),
       ),
     );

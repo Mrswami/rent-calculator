@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/signup_screen.dart';
@@ -35,55 +36,98 @@ class AppRouter {
       routes: [
         GoRoute(
           path: '/login',
-          builder: (context, state) => const LoginScreen(),
+          pageBuilder: (context, state) => const _NoTransitionPage(child: LoginScreen()),
         ),
         GoRoute(
           path: '/login/:userName',
-          builder: (context, state) => UserLoginScreen(
-            userName: state.pathParameters['userName'] ?? '',
+          pageBuilder: (context, state) => _FadeTransitionPage(
+            child: UserLoginScreen(
+              userName: state.pathParameters['userName'] ?? '',
+            ),
           ),
         ),
         GoRoute(
           path: '/signup',
-          builder: (context, state) => const SignUpScreen(),
+          pageBuilder: (context, state) => const _FadeTransitionPage(child: SignUpScreen()),
         ),
         GoRoute(
           path: '/dashboard',
-          builder: (context, state) => const DashboardScreen(),
+          pageBuilder: (context, state) => const _FadeTransitionPage(child: DashboardScreen()),
         ),
         GoRoute(
           path: '/rent',
-          builder: (context, state) => const RentTrackingScreen(),
+          pageBuilder: (context, state) => const _FadeTransitionPage(child: RentTrackingScreen()),
         ),
         GoRoute(
           path: '/rent/add',
-          builder: (context, state) => const AddRentPaymentScreen(),
+          pageBuilder: (context, state) => const _SlideTransitionPage(child: AddRentPaymentScreen()),
         ),
         GoRoute(
           path: '/budget',
-          builder: (context, state) => const BudgetScreen(),
+          pageBuilder: (context, state) => const _FadeTransitionPage(child: BudgetScreen()),
         ),
         GoRoute(
           path: '/budget/add',
-          builder: (context, state) => const AddBudgetScreen(),
+          pageBuilder: (context, state) => const _SlideTransitionPage(child: AddBudgetScreen()),
         ),
         GoRoute(
           path: '/expenses',
-          builder: (context, state) => const ExpensesScreen(),
+          pageBuilder: (context, state) => const _FadeTransitionPage(child: ExpensesScreen()),
         ),
         GoRoute(
           path: '/expenses/add',
-          builder: (context, state) => const AddExpenseScreen(),
+          pageBuilder: (context, state) => const _SlideTransitionPage(child: AddExpenseScreen()),
         ),
         GoRoute(
           path: '/plaid',
-          builder: (context, state) => const PlaidConnectScreen(),
+          pageBuilder: (context, state) => const _FadeTransitionPage(child: PlaidConnectScreen()),
         ),
         GoRoute(
           path: '/utilities',
-          builder: (context, state) => const UtilitySplitScreen(),
+          pageBuilder: (context, state) => const _FadeTransitionPage(child: UtilitySplitScreen()),
         ),
       ],
+    );
+  }
+}
+
+class _NoTransitionPage extends CustomTransitionPage {
+  const _NoTransitionPage({required super.child})
+      : super(
+          transitionsBuilder: _noTransition,
+          transitionDuration: Duration.zero,
+        );
+
+  static Widget _noTransition(context, animation, secondaryAnimation, child) => child;
+}
+
+class _FadeTransitionPage extends CustomTransitionPage {
+  const _FadeTransitionPage({required super.child})
+      : super(
+          transitionsBuilder: _fadeTransition,
+          transitionDuration: const Duration(milliseconds: 300),
+        );
+
+  static Widget _fadeTransition(context, animation, secondaryAnimation, child) {
+    return FadeTransition(opacity: animation, child: child);
+  }
+}
+
+class _SlideTransitionPage extends CustomTransitionPage {
+  const _SlideTransitionPage({required super.child})
+      : super(
+          transitionsBuilder: _slideTransition,
+          transitionDuration: const Duration(milliseconds: 400),
+        );
+
+  static Widget _slideTransition(context, animation, secondaryAnimation, child) {
+    return SlideTransition(
+      position: animation.drive(
+        Tween(begin: const Offset(0, 1), end: Offset.zero).chain(
+          CurveTween(curve: Curves.easeOutCubic),
+        ),
+      ),
+      child: child,
     );
   }
 }

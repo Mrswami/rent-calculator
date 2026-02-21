@@ -6,6 +6,8 @@ import 'utils/app_router.dart';
 import 'services/firebase_service.dart';
 import 'services/user_setup_service.dart';
 
+import 'utils/app_theme.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
@@ -59,26 +61,8 @@ class _RentCalculatorAppState extends State<RentCalculatorApp> {
       child: MaterialApp.router(
         title: 'Rent Calculator',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.blue,
-            brightness: Brightness.light,
-          ),
-          useMaterial3: true,
-          cardTheme: CardThemeData(
-            elevation: 2,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-        ),
-        darkTheme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.blue,
-            brightness: Brightness.dark,
-          ),
-          useMaterial3: true,
-        ),
+        theme: AppTheme.darkTheme,
+        darkTheme: AppTheme.darkTheme,
         routerConfig: _router,
       ),
     );
