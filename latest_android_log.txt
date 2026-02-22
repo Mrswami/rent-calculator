@@ -1,0 +1,387 @@
+﻿Build Android (APK & Bundle)	Set up job	∩╗┐2026-02-21T22:28:18.7974662Z Current runner version: '2.331.0'
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8010626Z ##[group]Runner Image Provisioner
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8012780Z Hosted Compute Agent
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8014078Z Version: 20260123.484
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8015620Z Commit: 6bd6555ca37d84114959e1c76d2c01448ff61c5d
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8017288Z Build Date: 2026-01-23T19:41:17Z
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8019059Z Worker ID: ***baf7768d-0920-4000-934b-9ddcec5c3086***
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8021002Z Azure Region: centralus
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8022397Z ##[endgroup]
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8025092Z ##[group]Operating System
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8026587Z Ubuntu
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8027801Z 24.04.3
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8029054Z LTS
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8030530Z ##[endgroup]
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8031908Z ##[group]Runner Image
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8033254Z Image: ubuntu-24.04
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8034670Z Version: 20260201.15.1
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8036970Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260201.15/images/ubuntu/Ubuntu2404-Readme.md
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8040724Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260201.15
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8042832Z ##[endgroup]
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8045539Z ##[group]GITHUB_TOKEN Permissions
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8048731Z Contents: read
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8050399Z Metadata: read
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8051674Z Packages: read
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8053009Z ##[endgroup]
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8056573Z Secret source: Actions
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8058306Z Prepare workflow directory
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8862762Z Prepare all required actions
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:18.8959471Z Getting action download info
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:19.3086012Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:19.4215225Z Download action repository 'subosito/flutter-action@v2' (SHA:fd55f4c5af5b953cc57a2be44cb082c8f6635e8e)
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:19.8020853Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:19.9272566Z Download action repository 'w9jds/firebase-action@master' (SHA:5aca62fb667f44e4671cad53bd7749afb6fe7185)
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:20.3712650Z Getting action download info
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:20.4907510Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+Build Android (APK & Bundle)	Set up job	2026-02-21T22:28:20.6798045Z Complete job name: Build Android (APK & Bundle)
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	∩╗┐2026-02-21T22:28:20.7213354Z ##[group]Pull down action image 'w9jds/firebase-action:v15.7.0'
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:20.7263922Z ##[command]/usr/bin/docker pull w9jds/firebase-action:v15.7.0
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4145403Z v15.7.0: Pulling from w9jds/firebase-action
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4156342Z 01d7766a2e4a: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4157236Z 868b909f8ce7: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4157975Z f12c2f6b47b7: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4158617Z e6b56ff66d06: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4159250Z c45a8f54c8db: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4160119Z b7d422002432: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4160816Z 946062b4ed6c: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4161612Z 6e27586da35f: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4162323Z f59f424d909c: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4163070Z 7bd9ef171ee6: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4163762Z 1c771e1d195a: Pulling fs layer
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4164426Z e6b56ff66d06: Waiting
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4165072Z c45a8f54c8db: Waiting
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4165574Z b7d422002432: Waiting
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4166216Z 946062b4ed6c: Waiting
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4166824Z 6e27586da35f: Waiting
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4167206Z f59f424d909c: Waiting
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4167665Z 7bd9ef171ee6: Waiting
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.4168033Z 1c771e1d195a: Waiting
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.7787240Z 01d7766a2e4a: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.7793266Z 01d7766a2e4a: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.8317470Z 868b909f8ce7: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.8320816Z 868b909f8ce7: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.9811515Z e6b56ff66d06: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:21.9816410Z e6b56ff66d06: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:22.0299203Z c45a8f54c8db: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:22.0310434Z c45a8f54c8db: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:22.2952772Z 946062b4ed6c: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:22.2977931Z 946062b4ed6c: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:22.6146206Z 6e27586da35f: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:22.6158868Z 6e27586da35f: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.1683030Z b7d422002432: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.1690093Z b7d422002432: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.2915409Z f59f424d909c: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.2916177Z f59f424d909c: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.3655242Z 7bd9ef171ee6: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.3683873Z 7bd9ef171ee6: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.4871639Z 1c771e1d195a: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.4874077Z 1c771e1d195a: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.6273628Z f12c2f6b47b7: Verifying Checksum
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.6274284Z f12c2f6b47b7: Download complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:23.8494211Z 01d7766a2e4a: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:27.7601375Z 868b909f8ce7: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:30.8061033Z f12c2f6b47b7: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:30.8239123Z e6b56ff66d06: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:30.8442207Z c45a8f54c8db: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:36.0055666Z b7d422002432: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:36.0567854Z 946062b4ed6c: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:37.3608147Z 6e27586da35f: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:44.9058860Z f59f424d909c: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:44.9212118Z 7bd9ef171ee6: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:44.9561023Z 1c771e1d195a: Pull complete
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:44.9615025Z Digest: sha256:026dc915d5d8bc7d8a7e86d9a1712f4625b3eb3c5330606dd01b452ace22bea5
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:44.9636369Z Status: Downloaded newer image for w9jds/firebase-action:v15.7.0
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:44.9646546Z docker.io/w9jds/firebase-action:v15.7.0
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-21T22:28:44.9671799Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	∩╗┐2026-02-21T22:28:44.9961260Z ##[group]Run actions/checkout@v4
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9961881Z with:
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9962171Z   repository: Mrswami/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9962605Z   token: ***
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9962883Z   ssh-strict: true
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9963158Z   ssh-user: git
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9963410Z   persist-credentials: true
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9963688Z   clean: true
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9963943Z   sparse-checkout-cone-mode: true
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9964242Z   fetch-depth: 1
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9964481Z   fetch-tags: false
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9964727Z   show-progress: true
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9964971Z   lfs: false
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9965195Z   submodules: false
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9965446Z   set-safe-directory: true
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:44.9965898Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1133772Z Syncing repository: Mrswami/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1135839Z ##[group]Getting Git version info
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1136642Z Working directory is '/home/runner/work/rent-calculator/rent-calculator'
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1137833Z [command]/usr/bin/git version
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1207737Z git version 2.52.0
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1237200Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1252784Z Temporarily overriding HOME='/home/runner/work/_temp/31c7036a-4284-458d-816a-d319a7616a41' before making global git config changes
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1256267Z Adding repository directory to the temporary git global config as a safe directory
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1260125Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rent-calculator/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1319057Z Deleting the contents of '/home/runner/work/rent-calculator/rent-calculator'
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1324272Z ##[group]Initializing the repository
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1330734Z [command]/usr/bin/git init /home/runner/work/rent-calculator/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1471352Z hint: Using 'master' as the name for the initial branch. This default branch name
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1473863Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1477280Z hint: to use in all of your new repositories, which will suppress this warning,
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1478322Z hint: call:
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1478705Z hint:
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1479396Z hint: 	git config --global init.defaultBranch <name>
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1480378Z hint:
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1481020Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1482045Z hint: 'development'. The just-created branch can be renamed via this command:
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1482831Z hint:
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1483281Z hint: 	git branch -m <name>
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1483782Z hint:
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1490242Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1491481Z Initialized empty Git repository in /home/runner/work/rent-calculator/rent-calculator/.git/
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1497266Z [command]/usr/bin/git remote add origin https://github.com/Mrswami/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1536759Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1537669Z ##[group]Disabling automatic garbage collection
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1542462Z [command]/usr/bin/git config --local gc.auto 0
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1573587Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1574659Z ##[group]Setting up auth
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1581827Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.1617330Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.2002383Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.2037082Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.2273498Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.2306148Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.2553868Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.2590791Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.2591781Z ##[group]Fetching the repository
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.2601236Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ef0db2d482ebd53d0c5d3fe7b751e77a7fdf6b89:refs/remotes/origin/main
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5838354Z From https://github.com/Mrswami/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5839232Z  * [new ref]         ef0db2d482ebd53d0c5d3fe7b751e77a7fdf6b89 -> origin/main
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5878726Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5879476Z ##[group]Determining the checkout info
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5880235Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5881228Z [command]/usr/bin/git sparse-checkout disable
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5929335Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5958375Z ##[group]Checking out the ref
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.5963531Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.6136194Z Switched to a new branch 'main'
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.6149100Z branch 'main' set up to track 'origin/main'.
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.6151859Z ##[endgroup]
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.6206901Z [command]/usr/bin/git log -1 --format=%H
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-21T22:28:45.6242953Z ef0db2d482ebd53d0c5d3fe7b751e77a7fdf6b89
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	∩╗┐2026-02-21T22:28:45.6560524Z ##[group]Run subosito/flutter-action@v2
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6560881Z with:
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6561104Z   channel: stable
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6561341Z   cache: true
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6561566Z   architecture: X64
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6561816Z   pub-cache-path: default
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6562079Z   dry-run: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6562386Z   git-source: https://github.com/flutter/flutter.git
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6562734Z ##[endgroup]
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6696043Z ##[group]Run chmod +x "$GITHUB_ACTION_PATH/setup.sh"
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6696517Z [36;1mchmod +x "$GITHUB_ACTION_PATH/setup.sh"[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6732521Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail ***0***
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6732945Z ##[endgroup]
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6873247Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p \
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6873691Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6874022Z [36;1m  -n '' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6874271Z [36;1m  -f '' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6874511Z [36;1m  -a 'X64' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6874793Z [36;1m  -k '' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6875024Z [36;1m  -c '' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6875245Z [36;1m  -l '' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6875476Z [36;1m  -d 'default' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6875844Z [36;1m  -g 'https://github.com/flutter/flutter.git' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6876202Z [36;1m  stable[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6905763Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail ***0***
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:45.6906189Z ##[endgroup]
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0393328Z ##[group]Run actions/cache@v4
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0393651Z with:
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0393945Z   path: /opt/hostedtoolcache/flutter/stable-3.41.2-x64
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0394454Z   key: flutter-linux-stable-3.41.2-x64-90673a4eef275d1a6692c26ac80d6d746d41a73a
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0394922Z   enableCrossOsArchive: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0395228Z   fail-on-cache-miss: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0395516Z   lookup-only: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0395770Z   save-always: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.0396015Z ##[endgroup]
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:46.3384635Z Cache hit for: flutter-linux-stable-3.41.2-x64-90673a4eef275d1a6692c26ac80d6d746d41a73a
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:47.4944797Z Received 62914560 of 1666000431 (3.8%), 60.0 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:48.4954286Z Received 209715200 of 1666000431 (12.6%), 100.0 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:49.4963814Z Received 390070272 of 1666000431 (23.4%), 123.9 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:50.4975533Z Received 532676608 of 1666000431 (32.0%), 126.9 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:51.4975191Z Received 671088640 of 1666000431 (40.3%), 127.9 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:52.5030787Z Received 826277888 of 1666000431 (49.6%), 131.2 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:53.5002027Z Received 1002438656 of 1666000431 (60.2%), 136.5 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:54.5040528Z Received 1166016512 of 1666000431 (70.0%), 138.9 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:55.5120649Z Received 1329594368 of 1666000431 (79.8%), 140.7 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:56.5100442Z Received 1476395008 of 1666000431 (88.6%), 140.6 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:57.5110871Z Received 1623195648 of 1666000431 (97.4%), 140.5 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:57.7155837Z Received 1666000431 of 1666000431 (100.0%), 141.6 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:57.7159556Z Cache Size: ~1589 MB (1666000431 B)
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:28:57.7257209Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c1066061-5348-449a-ae45-4da48bf807ed/cache.tzst -P -C /home/runner/work/rent-calculator/rent-calculator --use-compress-program unzstd
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:08.3896036Z Cache restored successfully
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.0402352Z Cache restored from key: flutter-linux-stable-3.41.2-x64-90673a4eef275d1a6692c26ac80d6d746d41a73a
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4602608Z ##[group]Run actions/cache@v4
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4602919Z with:
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4603160Z   path: /home/runner/.pub-cache
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4603910Z   key: flutter-pub-linux-stable-3.41.2-x64-90673a4eef275d1a6692c26ac80d6d746d41a73a-dd3d92731cfa16125bb4f5efa0be6963c9904b244383fe4803046694d28d3f5d
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4604684Z   enableCrossOsArchive: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4604978Z   fail-on-cache-miss: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4605491Z   lookup-only: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4605742Z   save-always: false
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:09.4605987Z ##[endgroup]
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:10.1619915Z Cache hit for: flutter-pub-linux-stable-3.41.2-x64-90673a4eef275d1a6692c26ac80d6d746d41a73a-dd3d92731cfa16125bb4f5efa0be6963c9904b244383fe4803046694d28d3f5d
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:11.0440620Z Received 60281477 of 60281477 (100.0%), 77.4 MBs/sec
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:11.0442232Z Cache Size: ~57 MB (60281477 B)
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:11.0473788Z [command]/usr/bin/tar -xf /home/runner/work/_temp/42997364-3ab7-4b94-97dd-acde6c00dc4c/cache.tzst -P -C /home/runner/work/rent-calculator/rent-calculator --use-compress-program unzstd
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1193121Z Cache restored successfully
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1397179Z Cache restored from key: flutter-pub-linux-stable-3.41.2-x64-90673a4eef275d1a6692c26ac80d6d746d41a73a-dd3d92731cfa16125bb4f5efa0be6963c9904b244383fe4803046694d28d3f5d
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1756655Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh \
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1757302Z [36;1m$GITHUB_ACTION_PATH/setup.sh \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1757830Z [36;1m  -n '3.41.2' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1758294Z [36;1m  -a 'x64' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1758818Z [36;1m  -c '/opt/hostedtoolcache/flutter/stable-3.41.2-x64' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1759259Z [36;1m  -d '/home/runner/.pub-cache' \[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.1759756Z [36;1m  stable[0m
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.2562883Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail ***0***
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-21T22:29:12.2563601Z ##[endgroup]
+Build Android (APK & Bundle)	Build APK	∩╗┐2026-02-21T22:29:12.6551815Z ##[group]Run flutter build apk --release
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:12.6552251Z [36;1mflutter build apk --release[0m
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:12.6585813Z shell: /usr/bin/bash -e ***0***
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:12.6586139Z env:
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:12.6586478Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.2-x64
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:12.6586900Z   PUB_CACHE: /home/runner/.pub-cache
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:12.6587221Z ##[endgroup]
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.0559451Z Resolving dependencies...
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.3326452Z Downloading packages...
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4260712Z   _flutterfire_internals 1.3.59 (1.3.66 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4261685Z > characters 1.4.1 (was 1.4.0)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4262625Z   cloud_firestore 5.6.12 (6.1.2 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4263722Z   cloud_firestore_platform_interface 6.6.12 (7.0.6 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4264732Z   cloud_firestore_web 4.4.12 (5.1.2 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4265571Z   firebase_auth 5.7.0 (6.1.4 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4266397Z   firebase_auth_platform_interface 7.7.3 (8.1.6 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4267332Z   firebase_auth_web 5.15.3 (6.1.2 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4268080Z   firebase_core 3.15.2 (4.4.0 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4268854Z   firebase_core_web 2.24.1 (3.4.0 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4269800Z   firebase_storage 12.4.10 (13.0.6 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4270760Z   firebase_storage_platform_interface 5.2.10 (5.2.17 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4271954Z   firebase_storage_web 3.10.17 (3.11.2 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4272942Z   fl_chart 0.69.2 (1.1.1 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4273687Z   go_router 14.8.1 (17.1.0 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4274367Z > matcher 0.12.18 (was 0.12.17)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4275192Z > material_color_utilities 0.13.0 (was 0.11.1)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4276126Z   meta 1.17.0 (1.18.1 available)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4277508Z > test_api 0.7.9 (was 0.7.7)
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4278480Z Changed 4 dependencies!
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4279852Z 15 packages have newer versions incompatible with dependency constraints.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:29:14.4281283Z Try `flutter pub outdated` for more information.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:34:48.6808619Z Running Gradle task 'assembleRelease'...                        
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:34:48.6840946Z Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 9908 bytes (99.4% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:34:48.6843440Z Font asset "CupertinoIcons.ttf" was tree-shaken, reducing it from 257628 to 848 bytes (99.7% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:35:23.9557981Z Checking the license for package CMake 3.22.1 in /usr/local/lib/android/sdk/licenses
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:35:23.9606783Z License for package CMake 3.22.1 accepted.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:35:23.9607799Z Preparing "Install CMake 3.22.1 v.3.22.1".
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:35:25.4558404Z "Install CMake 3.22.1 v.3.22.1" ready.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:35:25.4559837Z Installing CMake 3.22.1 in /usr/local/lib/android/sdk/cmake/3.22.1
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:35:25.4560719Z "Install CMake 3.22.1 v.3.22.1" complete.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:35:25.8551866Z "Install CMake 3.22.1 v.3.22.1" finished.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:37:33.8591063Z Note: Some input files use or override a deprecated API.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:37:33.8592105Z Note: Recompile with -Xlint:deprecation for details.
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:38:05.5566439Z Caught exception: Already watching path: /home/runner/work/rent-calculator/rent-calculator/android
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:41:31.5871822Z Running Gradle task 'assembleRelease'...                          736.7s
+Build Android (APK & Bundle)	Build APK	2026-02-21T22:41:32.0547435Z Γ£ô Built build/app/outputs/flutter-apk/app-release.apk (55.4MB)
+Build Android (APK & Bundle)	Build App Bundle (AAB)	∩╗┐2026-02-21T22:41:32.0846764Z ##[group]Run flutter build appbundle --release
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:32.0849090Z [36;1mflutter build appbundle --release[0m
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:32.1529014Z shell: /usr/bin/bash -e ***0***
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:32.1529393Z env:
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:32.1529980Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.2-x64
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:32.1530451Z   PUB_CACHE: /home/runner/.pub-cache
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:32.1530788Z ##[endgroup]
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:40.3301113Z Running Gradle task 'bundleRelease'...                          
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:40.3330799Z Caught exception: Already watching path: /home/runner/work/rent-calculator/rent-calculator/android
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:52.5859213Z Running Gradle task 'bundleRelease'...                             19.7s
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-21T22:41:56.3323250Z Γ£ô Built build/app/outputs/bundle/release/app-release.aab (46.8MB)
+Build Android (APK & Bundle)	Upload APK	∩╗┐2026-02-21T22:41:56.4106277Z ##[group]Run actions/upload-artifact@v4
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4106674Z with:
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4106921Z   name: android-apk
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4107382Z   path: build/app/outputs/flutter-apk/app-release.apk
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4107833Z   if-no-files-found: warn
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4108125Z   compression-level: 6
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4108392Z   overwrite: false
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4108685Z   include-hidden-files: false
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4109031Z env:
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4109445Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.2-x64
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4110082Z   PUB_CACHE: /home/runner/.pub-cache
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.4110444Z ##[endgroup]
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.7803116Z With the provided path, there will be 1 file uploaded
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.7809422Z Artifact name is valid!
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.7811702Z Root directory input is valid!
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:56.9488322Z Beginning upload of artifact content to blob storage
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:58.1525052Z Uploaded bytes 8388608
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:58.7802991Z Uploaded bytes 16777216
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:59.0982696Z Uploaded bytes 25165824
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:59.2046333Z Uploaded bytes 26341553
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:59.2562390Z Finished uploading artifact content to blob storage!
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:59.2566640Z SHA256 digest of uploaded artifact zip is 596d50354fbb98cd5ba6514085937abc2fe2799a5aa643c87fee5466427bba42
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:59.2568801Z Finalizing artifact upload
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:59.3611803Z Artifact android-apk.zip successfully finalized. Artifact ID 5603677906
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:59.3613945Z Artifact android-apk has been successfully uploaded! Final size is 26341553 bytes. Artifact ID is 5603677906
+Build Android (APK & Bundle)	Upload APK	2026-02-21T22:41:59.3621190Z Artifact download URL: https://github.com/Mrswami/rent-calculator/actions/runs/22265564226/artifacts/5603677906
+Build Android (APK & Bundle)	Upload AAB	∩╗┐2026-02-21T22:41:59.3798848Z ##[group]Run actions/upload-artifact@v4
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3799239Z with:
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3799483Z   name: android-aab
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3800045Z   path: build/app/outputs/bundle/release/app-release.aab
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3800505Z   if-no-files-found: warn
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3800991Z   compression-level: 6
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3801483Z   overwrite: false
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3801976Z   include-hidden-files: false
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3802493Z env:
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3803023Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.2-x64
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3803655Z   PUB_CACHE: /home/runner/.pub-cache
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.3803976Z ##[endgroup]
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.6144718Z With the provided path, there will be 1 file uploaded
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.6150852Z Artifact name is valid!
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.6153044Z Root directory input is valid!
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:41:59.7603243Z Beginning upload of artifact content to blob storage
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:00.6966807Z Uploaded bytes 8388608
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:00.9628970Z Uploaded bytes 16777216
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.1470683Z Uploaded bytes 25165824
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.3225371Z Uploaded bytes 33554432
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.4450346Z Uploaded bytes 41943040
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.6245490Z Uploaded bytes 46506991
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.6714363Z Finished uploading artifact content to blob storage!
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.6719294Z SHA256 digest of uploaded artifact zip is b2d750e3cd59d2927cc988c07069e3b1986600f8117c5c53f34e5ba4dfcae498
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.6722684Z Finalizing artifact upload
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.7821220Z Artifact android-aab.zip successfully finalized. Artifact ID 5603678076
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.7822958Z Artifact android-aab has been successfully uploaded! Final size is 46506991 bytes. Artifact ID is 5603678076
+Build Android (APK & Bundle)	Upload AAB	2026-02-21T22:42:01.7831113Z Artifact download URL: https://github.com/Mrswami/rent-calculator/actions/runs/22265564226/artifacts/5603678076
+Build Android (APK & Bundle)	Firebase App Distribution	∩╗┐2026-02-21T22:42:01.8087467Z ##[group]Run w9jds/firebase-action@master
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:01.8087868Z with:
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:01.8088529Z   args: appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app 1:707294763198:android:d033c89dd6f6d2cefe66ef --groups testers
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:01.8089245Z env:
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:01.8089795Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.2-x64
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:01.8090273Z   PUB_CACHE: /home/runner/.pub-cache
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:01.8099965Z   GCP_SA_KEY: ***
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:01.8100249Z ##[endgroup]
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:01.8393383Z ##[command]/usr/bin/docker run --name w9jdsfirebaseactionv1570_a4702f --label 7ef6e3 --workdir /github/workspace --rm -e "FLUTTER_ROOT" -e "PUB_CACHE" -e "GCP_SA_KEY" -e "INPUT_ARGS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/rent-calculator/rent-calculator":"/github/workspace" w9jds/firebase-action:v15.7.0 appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app 1:707294763198:android:d033c89dd6f6d2cefe66ef --groups testers
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:02.6074632Z Storing GCP_SA_KEY in /opt/gcp_key.json
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:02.6088320Z Exporting GOOGLE_APPLICATION_CREDENTIALS=/opt/gcp_key.json
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:04.0131635Z [36m[1mi [22m[39m uploading binary...
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:05.0274681Z 
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-21T22:42:05.0277016Z [1m[31mError:[39m[22m Failed to upload release. Request to https://firebaseappdistribution.googleapis.com/upload/v1/projects/707294763198/apps/1:707294763198:android:d033c89dd6f6d2cefe66ef/releases:upload had HTTP Error: 403, The caller does not have permission
+Build Android (APK & Bundle)	Post Run subosito/flutter-action@v2	∩╗┐2026-02-21T22:42:05.4239042Z Post job cleanup.
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	∩╗┐2026-02-21T22:42:05.4429333Z Post job cleanup.
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.5474987Z [command]/usr/bin/git version
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.5603598Z git version 2.52.0
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.5654941Z Temporarily overriding HOME='/home/runner/work/_temp/ee258cd0-6461-43ac-a7ab-f2dc55715ee3' before making global git config changes
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.5656918Z Adding repository directory to the temporary git global config as a safe directory
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.5662014Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rent-calculator/rent-calculator
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.5720911Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.5758580Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.6178944Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.6230168Z http.https://github.com/.extraheader
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.6240479Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.6344354Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.6680135Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-21T22:42:05.6733036Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build Android (APK & Bundle)	Complete job	∩╗┐2026-02-21T22:42:05.7144225Z Cleaning up orphan processes
+Build Android (APK & Bundle)	Complete job	2026-02-21T22:42:05.7810877Z Terminate orphan process: pid (2459) (java)
+Build Android (APK & Bundle)	Complete job	2026-02-21T22:42:05.7876739Z Terminate orphan process: pid (2551) (java)
+Build Android (APK & Bundle)	Complete job	2026-02-21T22:42:05.7999736Z Terminate orphan process: pid (3010) (java)
