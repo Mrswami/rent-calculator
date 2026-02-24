@@ -27,7 +27,7 @@ $headers = @{
     "Accept" = "application/vnd.github.v3+json"
 }
 
-$username = "mrswami"
+$username = "THEAMATEURSWAMI"
 $baseUrl = "https://api.github.com"
 
 # Function to create a new repository

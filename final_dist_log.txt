@@ -1,4 +1,4 @@
-﻿Build Android (APK & Bundle)	Set up job	∩╗┐2026-02-22T00:49:56.2921314Z Current runner version: '2.331.0'
+Build Android (APK & Bundle)	Set up job	n++2026-02-22T00:49:56.2921314Z Current runner version: '2.331.0'
 Build Android (APK & Bundle)	Set up job	2026-02-22T00:49:56.2955486Z ##[group]Runner Image Provisioner
 Build Android (APK & Bundle)	Set up job	2026-02-22T00:49:56.2957335Z Hosted Compute Agent
 Build Android (APK & Bundle)	Set up job	2026-02-22T00:49:56.2958678Z Version: 20260123.484
@@ -34,7 +34,7 @@ Build Android (APK & Bundle)	Set up job	2026-02-22T00:49:57.1714571Z Download ac
 Build Android (APK & Bundle)	Set up job	2026-02-22T00:49:57.4780464Z Getting action download info
 Build Android (APK & Bundle)	Set up job	2026-02-22T00:49:57.5752962Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
 Build Android (APK & Bundle)	Set up job	2026-02-22T00:49:57.7889638Z Complete job name: Build Android (APK & Bundle)
-Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	∩╗┐2026-02-22T00:49:57.8478125Z ##[group]Pull down action image 'w9jds/firebase-action:v15.7.0'
+Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	n++2026-02-22T00:49:57.8478125Z ##[group]Pull down action image 'w9jds/firebase-action:v15.7.0'
 Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-22T00:49:57.8532088Z ##[command]/usr/bin/docker pull w9jds/firebase-action:v15.7.0
 Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-22T00:49:58.2078213Z v15.7.0: Pulling from w9jds/firebase-action
 Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-22T00:49:58.2080766Z 01d7766a2e4a: Pulling fs layer
@@ -93,9 +93,9 @@ Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-22T00:50
 Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-22T00:50:22.0387791Z Status: Downloaded newer image for w9jds/firebase-action:v15.7.0
 Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-22T00:50:22.0398214Z docker.io/w9jds/firebase-action:v15.7.0
 Build Android (APK & Bundle)	Pull w9jds/firebase-action:v15.7.0	2026-02-22T00:50:22.0420059Z ##[endgroup]
-Build Android (APK & Bundle)	Run actions/checkout@v4	∩╗┐2026-02-22T00:50:22.0713245Z ##[group]Run actions/checkout@v4
+Build Android (APK & Bundle)	Run actions/checkout@v4	n++2026-02-22T00:50:22.0713245Z ##[group]Run actions/checkout@v4
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0713894Z with:
-Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0714185Z   repository: Mrswami/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0714185Z   repository: THEAMATEURSWAMI/rent-calculator
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0714679Z   token: ***
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0714933Z   ssh-strict: true
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0715184Z   ssh-user: git
@@ -109,7 +109,7 @@ Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0717431
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0717659Z   submodules: false
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0717929Z   set-safe-directory: true
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.0718526Z ##[endgroup]
-Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.1886766Z Syncing repository: Mrswami/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.1886766Z Syncing repository: THEAMATEURSWAMI/rent-calculator
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.1888903Z ##[group]Getting Git version info
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.1889843Z Working directory is '/home/runner/work/rent-calculator/rent-calculator'
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.1891203Z [command]/usr/bin/git version
@@ -135,7 +135,7 @@ Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2199283
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2199786Z hint:
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2200973Z hint: Disable this message with "git config set advice.defaultBranchName false"
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2202277Z Initialized empty Git repository in /home/runner/work/rent-calculator/rent-calculator/.git/
-Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2208560Z [command]/usr/bin/git remote add origin https://github.com/Mrswami/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2208560Z [command]/usr/bin/git remote add origin https://github.com/THEAMATEURSWAMI/rent-calculator
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2246591Z ##[endgroup]
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2247440Z ##[group]Disabling automatic garbage collection
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.2251379Z [command]/usr/bin/git config --local gc.auto 0
@@ -151,7 +151,7 @@ Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.3217608
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.3254676Z ##[endgroup]
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.3256003Z ##[group]Fetching the repository
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.3264090Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ef0db2d482ebd53d0c5d3fe7b751e77a7fdf6b89:refs/remotes/origin/main
-Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5357416Z From https://github.com/Mrswami/rent-calculator
+Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5357416Z From https://github.com/THEAMATEURSWAMI/rent-calculator
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5358577Z  * [new ref]         ef0db2d482ebd53d0c5d3fe7b751e77a7fdf6b89 -> origin/main
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5383488Z ##[endgroup]
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5384470Z ##[group]Determining the checkout info
@@ -165,7 +165,7 @@ Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5704473
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5719744Z ##[endgroup]
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5784291Z [command]/usr/bin/git log -1 --format=%H
 Build Android (APK & Bundle)	Run actions/checkout@v4	2026-02-22T00:50:22.5821169Z ef0db2d482ebd53d0c5d3fe7b751e77a7fdf6b89
-Build Android (APK & Bundle)	Run subosito/flutter-action@v2	∩╗┐2026-02-22T00:50:22.6146053Z ##[group]Run subosito/flutter-action@v2
+Build Android (APK & Bundle)	Run subosito/flutter-action@v2	n++2026-02-22T00:50:22.6146053Z ##[group]Run subosito/flutter-action@v2
 Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-22T00:50:22.6146586Z with:
 Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-22T00:50:22.6146818Z   channel: stable
 Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-22T00:50:22.6147062Z   cache: true
@@ -238,7 +238,7 @@ Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-22T00:50:46.
 Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-22T00:50:46.3725042Z [36;1m  stable[0m
 Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-22T00:50:47.0790196Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail ***0***
 Build Android (APK & Bundle)	Run subosito/flutter-action@v2	2026-02-22T00:50:47.0790931Z ##[endgroup]
-Build Android (APK & Bundle)	Build APK	∩╗┐2026-02-22T00:50:47.3145458Z ##[group]Run flutter build apk --release
+Build Android (APK & Bundle)	Build APK	n++2026-02-22T00:50:47.3145458Z ##[group]Run flutter build apk --release
 Build Android (APK & Bundle)	Build APK	2026-02-22T00:50:47.3148602Z [36;1mflutter build apk --release[0m
 Build Android (APK & Bundle)	Build APK	2026-02-22T00:50:47.3185245Z shell: /usr/bin/bash -e ***0***
 Build Android (APK & Bundle)	Build APK	2026-02-22T00:50:47.3185583Z env:
@@ -283,8 +283,8 @@ Build Android (APK & Bundle)	Build APK	2026-02-22T00:57:32.2452182Z Note: Some i
 Build Android (APK & Bundle)	Build APK	2026-02-22T00:57:32.2457255Z Note: Recompile with -Xlint:deprecation for details.
 Build Android (APK & Bundle)	Build APK	2026-02-22T00:58:00.9393377Z Caught exception: Already watching path: /home/runner/work/rent-calculator/rent-calculator/android
 Build Android (APK & Bundle)	Build APK	2026-02-22T01:01:26.4341535Z Running Gradle task 'assembleRelease'...                          637.4s
-Build Android (APK & Bundle)	Build APK	2026-02-22T01:01:27.0460364Z Γ£ô Built build/app/outputs/flutter-apk/app-release.apk (55.4MB)
-Build Android (APK & Bundle)	Build App Bundle (AAB)	∩╗┐2026-02-22T01:01:27.1936431Z ##[group]Run flutter build appbundle --release
+Build Android (APK & Bundle)	Build APK	2026-02-22T01:01:27.0460364Z G�� Built build/app/outputs/flutter-apk/app-release.apk (55.4MB)
+Build Android (APK & Bundle)	Build App Bundle (AAB)	n++2026-02-22T01:01:27.1936431Z ##[group]Run flutter build appbundle --release
 Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:27.1946239Z [36;1mflutter build appbundle --release[0m
 Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:27.2921136Z shell: /usr/bin/bash -e ***0***
 Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:27.2924453Z env:
@@ -294,8 +294,8 @@ Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:27.2931173Z
 Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:35.4167019Z Running Gradle task 'bundleRelease'...                          
 Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:35.4193247Z Caught exception: Already watching path: /home/runner/work/rent-calculator/rent-calculator/android
 Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:48.0426643Z Running Gradle task 'bundleRelease'...                             19.8s
-Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:52.4753901Z Γ£ô Built build/app/outputs/bundle/release/app-release.aab (46.8MB)
-Build Android (APK & Bundle)	Upload APK	∩╗┐2026-02-22T01:01:52.5152961Z ##[group]Run actions/upload-artifact@v4
+Build Android (APK & Bundle)	Build App Bundle (AAB)	2026-02-22T01:01:52.4753901Z G�� Built build/app/outputs/bundle/release/app-release.aab (46.8MB)
+Build Android (APK & Bundle)	Upload APK	n++2026-02-22T01:01:52.5152961Z ##[group]Run actions/upload-artifact@v4
 Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:52.5156735Z with:
 Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:52.5158544Z   name: android-apk
 Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:52.5160595Z   path: build/app/outputs/flutter-apk/app-release.apk
@@ -320,8 +320,8 @@ Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:55.0163760Z SHA256 dige
 Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:55.0165882Z Finalizing artifact upload
 Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:55.0980712Z Artifact android-apk.zip successfully finalized. Artifact ID 5604247827
 Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:55.0983001Z Artifact android-apk has been successfully uploaded! Final size is 26341553 bytes. Artifact ID is 5604247827
-Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:55.0990617Z Artifact download URL: https://github.com/Mrswami/rent-calculator/actions/runs/22267523975/artifacts/5604247827
-Build Android (APK & Bundle)	Upload AAB	∩╗┐2026-02-22T01:01:55.1149859Z ##[group]Run actions/upload-artifact@v4
+Build Android (APK & Bundle)	Upload APK	2026-02-22T01:01:55.0990617Z Artifact download URL: https://github.com/THEAMATEURSWAMI/rent-calculator/actions/runs/22267523975/artifacts/5604247827
+Build Android (APK & Bundle)	Upload AAB	n++2026-02-22T01:01:55.1149859Z ##[group]Run actions/upload-artifact@v4
 Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:55.1150220Z with:
 Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:55.1150472Z   name: android-aab
 Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:55.1150812Z   path: build/app/outputs/bundle/release/app-release.aab
@@ -348,8 +348,8 @@ Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:57.2744309Z SHA256 dige
 Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:57.2746861Z Finalizing artifact upload
 Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:57.3538794Z Artifact android-aab.zip successfully finalized. Artifact ID 5604248015
 Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:57.3540609Z Artifact android-aab has been successfully uploaded! Final size is 46506987 bytes. Artifact ID is 5604248015
-Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:57.3549285Z Artifact download URL: https://github.com/Mrswami/rent-calculator/actions/runs/22267523975/artifacts/5604248015
-Build Android (APK & Bundle)	Firebase App Distribution	∩╗┐2026-02-22T01:01:57.3748986Z ##[group]Run w9jds/firebase-action@master
+Build Android (APK & Bundle)	Upload AAB	2026-02-22T01:01:57.3549285Z Artifact download URL: https://github.com/THEAMATEURSWAMI/rent-calculator/actions/runs/22267523975/artifacts/5604248015
+Build Android (APK & Bundle)	Firebase App Distribution	n++2026-02-22T01:01:57.3748986Z ##[group]Run w9jds/firebase-action@master
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:01:57.3749393Z with:
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:01:57.3750069Z   args: appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app 1:707294763198:android:d033c89dd6f6d2cefe66ef --groups testers
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:01:57.3750800Z env:
@@ -361,16 +361,16 @@ Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:01:57.39124
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:01:58.0982006Z Storing GCP_SA_KEY in /opt/gcp_key.json
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:01:58.0993917Z Exporting GOOGLE_APPLICATION_CREDENTIALS=/opt/gcp_key.json
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:01:59.3608296Z [36m[1mi [22m[39m uploading binary...
-Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8272846Z [32m[1mΓ£ö [22m[39m uploaded new release 1.0.0 (1) successfully!
-Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8277967Z [32m[1mΓ£ö [22m[39m View this release in the Firebase console: https://console.firebase.google.com/project/rent-calculator-bedd3/appdistribution/app/android:com.example.rent_calculator/releases/5l41alt2f6ct0?utm_source=firebase-tools
-Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8283071Z [32m[1mΓ£ö [22m[39m Share this release with testers who have access: https://appdistribution.firebase.google.com/testerapps/1:707294763198:android:d033c89dd6f6d2cefe66ef/releases/5l41alt2f6ct0?utm_source=firebase-tools
-Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8290343Z [32m[1mΓ£ö [22m[39m Download the release binary (link expires in 1 hour): https://firebaseappdistribution.googleapis.com/app-binary-downloads/projects/707294763198/apps/1:707294763198:android:d033c89dd6f6d2cefe66ef/releases/5l41alt2f6ct0/binaries/d186f8976ae512dc96f8ebc72b1e8582ba588ab4386d17aa505af804f12fef1e/app.apk?utm_source=firebase-tools&token=AP0lV28AAAAAaZpjp6eEE3f8bECtptvB6vPtn6WR3lrm8snzauDkkZwYF3Gz_e6qRTkjaE465cU2WnfjDHTp1xC_CGBZi-llxRzC2xtqj4UANZgdPzP4CcpBzvRqXmhs8lfwn4pORWpZIzzPAT4wyorq_kM212ft6deoxRW7bu4mNubHLiWtaOcNmkJHTwuop-F_jmoTuTRIfDJkxuePT6d1H7urnKzype7h8ZM0oHBBTyJioHszlyPFS0JhM8MV6vcj7Rvtefwyq8onvvXQxN-OPP_NqeKULslVkCmsbU0DDd8We5fhah96Ju2VhkTWu2dpbczPSWG5mH8fuYUlaFkY3mFOmM9p-WjOEKc
-Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8293741Z [33m[1mΓÜá [22m[39m no release notes specified, skipping
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8272846Z [32m[1mG�� [22m[39m uploaded new release 1.0.0 (1) successfully!
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8277967Z [32m[1mG�� [22m[39m View this release in the Firebase console: https://console.firebase.google.com/project/rent-calculator-bedd3/appdistribution/app/android:com.example.rent_calculator/releases/5l41alt2f6ct0?utm_source=firebase-tools
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8283071Z [32m[1mG�� [22m[39m Share this release with testers who have access: https://appdistribution.firebase.google.com/testerapps/1:707294763198:android:d033c89dd6f6d2cefe66ef/releases/5l41alt2f6ct0?utm_source=firebase-tools
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8290343Z [32m[1mG�� [22m[39m Download the release binary (link expires in 1 hour): https://firebaseappdistribution.googleapis.com/app-binary-downloads/projects/707294763198/apps/1:707294763198:android:d033c89dd6f6d2cefe66ef/releases/5l41alt2f6ct0/binaries/d186f8976ae512dc96f8ebc72b1e8582ba588ab4386d17aa505af804f12fef1e/app.apk?utm_source=firebase-tools&token=AP0lV28AAAAAaZpjp6eEE3f8bECtptvB6vPtn6WR3lrm8snzauDkkZwYF3Gz_e6qRTkjaE465cU2WnfjDHTp1xC_CGBZi-llxRzC2xtqj4UANZgdPzP4CcpBzvRqXmhs8lfwn4pORWpZIzzPAT4wyorq_kM212ft6deoxRW7bu4mNubHLiWtaOcNmkJHTwuop-F_jmoTuTRIfDJkxuePT6d1H7urnKzype7h8ZM0oHBBTyJioHszlyPFS0JhM8MV6vcj7Rvtefwyq8onvvXQxN-OPP_NqeKULslVkCmsbU0DDd8We5fhah96Ju2VhkTWu2dpbczPSWG5mH8fuYUlaFkY3mFOmM9p-WjOEKc
+Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8293741Z [33m[1mG�� [22m[39m no release notes specified, skipping
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:15.8294518Z [36m[1mi [22m[39m distributing to testers/groups...
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:16.0259987Z 
 Build Android (APK & Bundle)	Firebase App Distribution	2026-02-22T01:02:16.0262376Z [1m[31mError:[39m[22m failed to distribute to testers/groups: Request to https://firebaseappdistribution.googleapis.com/v1/projects/707294763198/apps/1:707294763198:android:d033c89dd6f6d2cefe66ef/releases/5l41alt2f6ct0:distribute had HTTP Error: 404, Requested entity was not found.
-Build Android (APK & Bundle)	Post Run subosito/flutter-action@v2	∩╗┐2026-02-22T01:02:16.4105170Z Post job cleanup.
-Build Android (APK & Bundle)	Post Run actions/checkout@v4	∩╗┐2026-02-22T01:02:16.4213019Z Post job cleanup.
+Build Android (APK & Bundle)	Post Run subosito/flutter-action@v2	n++2026-02-22T01:02:16.4105170Z Post job cleanup.
+Build Android (APK & Bundle)	Post Run actions/checkout@v4	n++2026-02-22T01:02:16.4213019Z Post job cleanup.
 Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-22T01:02:16.5196570Z [command]/usr/bin/git version
 Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-22T01:02:16.5250748Z git version 2.52.0
 Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-22T01:02:16.5297086Z Temporarily overriding HOME='/home/runner/work/_temp/8d41e820-d3d8-49f0-b05d-71339dad403e' before making global git config changes
@@ -384,7 +384,7 @@ Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-22T01:02:16.57
 Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-22T01:02:16.5828221Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
 Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-22T01:02:16.6118461Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
 Build Android (APK & Bundle)	Post Run actions/checkout@v4	2026-02-22T01:02:16.6176712Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-Build Android (APK & Bundle)	Complete job	∩╗┐2026-02-22T01:02:16.6606695Z Cleaning up orphan processes
+Build Android (APK & Bundle)	Complete job	n++2026-02-22T01:02:16.6606695Z Cleaning up orphan processes
 Build Android (APK & Bundle)	Complete job	2026-02-22T01:02:16.7057332Z Terminate orphan process: pid (2458) (java)
 Build Android (APK & Bundle)	Complete job	2026-02-22T01:02:16.7103326Z Terminate orphan process: pid (2544) (java)
 Build Android (APK & Bundle)	Complete job	2026-02-22T01:02:16.7194861Z Terminate orphan process: pid (2980) (java)

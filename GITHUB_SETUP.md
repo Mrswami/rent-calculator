@@ -41,7 +41,7 @@ If you prefer not to pass the token as a parameter, you can modify the script to
 
 ## What the Script Does
 
-1. **Creates a new repository**: `rent-calculator` (private) for account `mrswami`
+1. **Creates a new repository**: `rent-calculator` (private) for account `THEAMATEURSWAMI`
 2. **Renames existing repository**: `rent-friends` → `rave-friends`
 
 ## Manual Alternative
@@ -55,7 +55,7 @@ If you prefer to do this manually:
 4. Click "Create repository"
 
 ### Rename Existing Repository
-1. Go to https://github.com/mrswami/rent-friends/settings
+1. Go to https://github.com/THEAMATEURSWAMI/rent-friends/settings
 2. Scroll down to "Repository name"
 3. Change from `rent-friends` to `rave-friends`
 4. Click "Rename"

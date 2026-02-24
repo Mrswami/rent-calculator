@@ -89,4 +89,36 @@ class RentCalculatorService {
     final spent = calculateCategoryExpenses(expenses, category, startDate, endDate);
     return budgetLimit - spent;
   }
+
+  /// Specialized split for Electricity/Utilities as requested per user math:
+  /// 1. Shared Fixed Fees (Deposit, Clean Energy, Transport) split evenly (1/3 each).
+  /// 2. Variable Usage (Actual Electricity) split weighted: 50% for Primary, 25% each for others.
+  static Map<String, double> calculateWeightedUtilitySplit({
+    required double fixedFeesTotal,
+    required double usageTotal,
+    required String primaryRoommateId,
+    required List<String> otherRoommateIds,
+  }) {
+    final totals = <String, double>{};
+    final allRoommatesCount = otherRoommateIds.length + 1;
+    
+    // 1. Split Fixed Fees evenly
+    final fixedShare = fixedFeesTotal / allRoommatesCount;
+    
+    // 2. Split Usage weighted
+    // Primary pays 50%
+    final primaryUsageShare = usageTotal * 0.5;
+    // Others split the remaining 50% equally
+    final otherUsageShare = (usageTotal * 0.5) / otherRoommateIds.length;
+
+    // Apply to Primary (e.g., "J")
+    totals[primaryRoommateId] = fixedShare + primaryUsageShare;
+
+    // Apply to Others (e.g., "N" and "E")
+    for (final id in otherRoommateIds) {
+      totals[id] = fixedShare + otherUsageShare;
+    }
+
+    return totals;
+  }
 }

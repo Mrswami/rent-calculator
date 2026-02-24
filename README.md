@@ -31,7 +31,7 @@ A Flutter web application for tracking rent dues, calculating rent, and managing
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Mrswami/rent-calculator.git
+git clone https://github.com/THEAMATEURSWAMI/rent-calculator.git
 cd rent-calculator
 ```
 
