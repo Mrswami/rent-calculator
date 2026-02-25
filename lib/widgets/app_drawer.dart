@@ -95,6 +95,16 @@ class AppDrawer extends StatelessWidget {
                   label: 'Utility Splitter',
                   onTap: () => context.go('/utilities'),
                 ),
+                _DrawerTile(
+                  icon: Icons.receipt_long,
+                  label: 'Billing Statement',
+                  onTap: () => context.go('/statement'),
+                ),
+                _DrawerTile(
+                  icon: Icons.compare_arrows_rounded,
+                  label: 'Payment Discrepancies',
+                  onTap: () => context.go('/statement/discrepancy'),
+                ),
                 const Divider(height: 32, indent: 12, endIndent: 12),
                 _DrawerTile(
                   icon: Icons.settings_rounded,

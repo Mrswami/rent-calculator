@@ -5,6 +5,7 @@ import '../models/expense.dart';
 import '../models/budget.dart';
 import '../models/plaid_account.dart';
 import '../models/utility_bill.dart';
+import '../models/payment_record.dart';
 
 class FirebaseService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -214,6 +215,33 @@ class FirebaseService {
           'splits':    updated,
           'updatedAt': FieldValue.serverTimestamp(),
         });
+  }
+
+  // ── Payment Records (actual vs owed) ─────────────────────────────────────────
+
+  Stream<List<PaymentRecord>> getPaymentRecords({required int month, required int year}) {
+    return _firestore
+        .collection('payment_records')
+        .where('year', isEqualTo: year)
+        .snapshots()
+        .map((snap) => snap.docs
+            .map((d) => PaymentRecord.fromFirestore(d))
+            .where((r) => r.month == month)
+            .toList());
+  }
+
+  /// Returns all prior-month records to compute running credit balances.
+  Future<List<PaymentRecord>> getAllPaymentRecords() async {
+    final snap = await _firestore.collection('payment_records').get();
+    return snap.docs.map((d) => PaymentRecord.fromFirestore(d)).toList();
+  }
+
+  Future<void> addPaymentRecord(PaymentRecord record) async {
+    await _firestore.collection('payment_records').add(record.toFirestore());
+  }
+
+  Future<void> deletePaymentRecord(String id) async {
+    await _firestore.collection('payment_records').doc(id).delete();
   }
 
   // ── Plaid / Bank connection ─────────────────────────────────────────────────

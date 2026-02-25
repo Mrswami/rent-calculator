@@ -12,6 +12,8 @@ import '../screens/expenses/expenses_screen.dart';
 import '../screens/expenses/add_expense_screen.dart';
 import '../screens/plaid/plaid_connect_screen.dart';
 import '../screens/utilities/utility_split_screen.dart';
+import '../screens/statement/billing_statement_screen.dart';
+import '../screens/statement/payment_discrepancy_screen.dart';
 import '../services/firebase_service.dart';
 
 class AppRouter {
@@ -84,7 +86,15 @@ class AppRouter {
         ),
         GoRoute(
           path: '/utilities',
-          pageBuilder: (context, state) => const _FadeTransitionPage(child: UtilitySplitScreen()),
+          pageBuilder: (context, state) => _FadeTransitionPage(child: UtilitySplitScreen()),
+        ),
+        GoRoute(
+          path: '/statement',
+          pageBuilder: (context, state) => _FadeTransitionPage(child: const BillingStatementScreen()),
+        ),
+        GoRoute(
+          path: '/statement/discrepancy',
+          pageBuilder: (context, state) => const _FadeTransitionPage(child: PaymentDiscrepancyScreen()),
         ),
       ],
     );

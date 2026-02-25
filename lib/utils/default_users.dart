@@ -14,7 +14,8 @@ class DefaultUser {
   });
 }
 
-class DefaultUsers {
+  static const bool isPortfolioMode = false;
+
   static const List<DefaultUser> users = [
     DefaultUser(
       name: 'Jacob',

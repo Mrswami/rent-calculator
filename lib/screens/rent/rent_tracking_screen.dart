@@ -185,19 +185,30 @@ class _PaymentList extends StatelessWidget {
                   ),
               ],
             ),
-            trailing: payment.isPaid
-                ? null
-                : IconButton(
-                    icon: const Icon(Icons.check_circle),
-                    color: Colors.green,
-                    onPressed: () async {
-                      await firebaseService.markRentPaymentAsPaid(payment.id!);
-                      if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Payment marked as paid')),
-                        );
-                      }
-                    },
+                : Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.auto_awesome),
+                        tooltip: 'Verify Automatically',
+                        color: Colors.purple,
+                        onPressed: () {
+                          context.go('/statement/discrepancy');
+                        },
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.check_circle),
+                        color: Colors.green,
+                        onPressed: () async {
+                          await firebaseService.markRentPaymentAsPaid(payment.id!);
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Payment marked as paid')),
+                            );
+                          }
+                        },
+                      ),
+                    ],
                   ),
             onTap: () {
               // Show payment details dialog

@@ -127,6 +127,28 @@ class UtilityBill {
     return currentSplits.map((sp) => sp.copyWith(amount: totals[sp.userName])).toList();
   }
 
+  /// Helper to find a specific person's split info.
+  UtilitySplit? splitFor(String userName) {
+    try {
+      return splits.firstWhere((s) => s.userName == userName);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Simple total-based distribution (fallback/legacy).
+  static List<UtilitySplit> calcAmounts(List<UtilitySplit> base, double total) {
+    if (base.isEmpty) return base;
+    final totalWeight = base.fold<double>(0, (sum, s) => sum + s.weight);
+    if (totalWeight == 0) return base;
+
+    return base.map((s) => s.copyWith(amount: (s.weight / totalWeight) * total)).toList();
+  }
+
+  double get paidAmount => splits.where((s) => s.isPaid).fold<double>(0, (a, b) => a + b.amount);
+  double get remainingAmount => totalAmount - paidAmount;
+  bool   get isFullyPaid => remainingAmount <= 0.01;
+
   // ── Firestore ─────────────────────────────────────────────────────────────
 
   Map<String, dynamic> toFirestore() => {
@@ -183,5 +205,53 @@ class UtilityBill {
         splits:      splits        ?? this.splits,
         lineItems:   lineItems     ?? this.lineItems,
         notes:       notes         ?? this.notes,
+      );
+}
+
+/// A per-person share of a utility bill.
+class UtilitySplit {
+  final String userName;
+  final double weight;
+  final double amount;
+  final bool   isPaid;
+  final DateTime? paidDate;
+
+  const UtilitySplit({
+    required this.userName,
+    this.weight = 1.0,
+    this.amount = 0.0,
+    this.isPaid = false,
+    this.paidDate,
+  });
+
+  Map<String, dynamic> toMap() => {
+        'userName': userName,
+        'weight':   weight,
+        'amount':   amount,
+        'isPaid':   isPaid,
+        'paidDate': paidDate != null ? Timestamp.fromDate(paidDate!) : null,
+      };
+
+  factory UtilitySplit.fromMap(Map<String, dynamic> m) => UtilitySplit(
+        userName: m['userName'] as String,
+        weight:   (m['weight']   as num).toDouble(),
+        amount:   (m['amount']   as num).toDouble(),
+        isPaid:   m['isPaid']   as bool? ?? false,
+        paidDate: m['paidDate'] != null ? (m['paidDate'] as Timestamp).toDate() : null,
+      );
+
+  UtilitySplit copyWith({
+    String? userName,
+    double? weight,
+    double? amount,
+    bool?   isPaid,
+    DateTime? paidDate,
+  }) =>
+      UtilitySplit(
+        userName: userName ?? this.userName,
+        weight:   weight   ?? this.weight,
+        amount:   amount   ?? this.amount,
+        isPaid:   isPaid   ?? this.isPaid,
+        paidDate: paidDate ?? this.paidDate,
       );
 }
