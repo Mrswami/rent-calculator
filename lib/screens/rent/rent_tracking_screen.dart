@@ -185,6 +185,8 @@ class _PaymentList extends StatelessWidget {
                   ),
               ],
             ),
+            trailing: payment.isPaid
+                ? null
                 : Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [

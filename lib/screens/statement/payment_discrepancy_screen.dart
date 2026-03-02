@@ -49,10 +49,9 @@ class PaymentDiscrepancyScreen extends StatelessWidget {
             ],
             stops: const [0.0, 0.4],
           ),
-        ),
         child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(16, 120, 16, 16),
-        child: Column(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             _InfoCard(),
