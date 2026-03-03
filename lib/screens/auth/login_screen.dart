@@ -71,16 +71,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 48),
 
                 // User profile cards
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 24, // Matches the previous 12+12 horizontal padding
+                  runSpacing: 24, // Spacing between rows if they wrap
                   children: DefaultUsers.users.map((user) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      child: _UserCard(
-                        user: user,
-                        isRemembered: _rememberedUser?.toLowerCase() ==
-                            user.name.toLowerCase(),
-                      ),
+                    return _UserCard(
+                      user: user,
+                      isRemembered: _rememberedUser?.toLowerCase() ==
+                          user.name.toLowerCase(),
                     );
                   }).toList(),
                 ),
