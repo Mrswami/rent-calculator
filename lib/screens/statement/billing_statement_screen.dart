@@ -132,7 +132,7 @@ class _HeaderCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(DefaultUsers.isPortfolioMode ? 'Room 4061 — Sample Unit' : 'Unit 4061 — Mueller Blvd',
+                  Text(DefaultUsers.isPortfolioMode ? 'Room 4061 — Sample Unit' : 'Unit 4061 — Residence',
                       style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
